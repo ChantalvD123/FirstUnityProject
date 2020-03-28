@@ -22,11 +22,14 @@ public class CoinScript : MonoBehaviour
         Debug.Log(other.name);
         if (other.name == "Player")
         {
+            // Play the sound cue associated with collecting a coin
             collectSound.Play();
-            other.GetComponent<PlayerScript>().points++;
+            
             //Add 1 to points
-            Destroy(gameObject); //this destroys things
-            Debug.Log("trigger");
+            other.GetComponent<PlayerScript>().points++;
+            
+            //this destroys things
+            Destroy(gameObject); 
         }
     }
 }
